@@ -1,0 +1,30 @@
+#!/bin/bash
+
+echo "Change Priority Berkay Onurhan Yigit";
+echo "(CHP_BOY) Kernel Compiler!!";
+
+cd /usr/src/linux-2.4.20/;
+
+make mrproper;
+make menuconfig;
+make dep -s;
+make clean;
+make bzImage;
+
+if [ -f /usr/src/linux-2.4.20/arch/i386/boot/bzImage ]; then
+	echo "----------ISLEM TAMAM DOSTUM----------";
+else
+	echo "Kernel compile error !!!";
+	exit 1;
+fi
+
+make modules;
+make modules_install;
+
+/sbin/mkinitrd -f /boot/initrd-2.4.20-10.img 2.4.20-10;
+
+cp -f /usr/src/linux-2.4.20/arch/i386/boot/bzImage /boot/bzImage-2.4.20-10;
+cp -f /usr/src/linux-2.4.20/System.map /boot/System.map-2.4.20-10;
+ln -sf /boot/System.map-2.4.20-10 /boot/System.map;
+
+echo "----------------- Islem Bitti -----------------";
