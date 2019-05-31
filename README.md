@@ -26,3 +26,23 @@ Afterwards, you need to edit /etc/grub.conf and append the following;
 Reboot the system and select "CSE331-Test" for booting in grub selection menu. To change the scheduler and run tests, just compile "test_sched.c" and run it in command line "/path/to/compile/result/sched 1". Afterwards you are free to test things out.
 
 Note: Files with "user_" prefix are for user space while others are for kernel space.
+
+---
+
+# EXAMPLE TEST RUN
+
+For the test we were doing, we had 3 users;
+
+    usernames      ; test1, yest1, west1
+    priorities     ; 1    , 2    , 1
+    process counts ; 2    , 2    , 6
+
+With these we obtained averages for processes for each user:
+
+    for user test1: 11.5067     expected: 12.5
+    for user yest1: 19.7583     expected: 25
+    for user west1: 6.4237      expected: 4.16
+
+Mean Square Error; 5.7954,
+
+which means we are 5.8% off of our expectations.
