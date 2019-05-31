@@ -12,9 +12,9 @@ Example Scenerio:
 
 We have implemented this scheduler for 2.4.20-8 linux kernel (2004). To test it, using a file sharing application (like FileZilla);
 
-1) copy the files to a directory of your choice,
-2) run "move.sh",
-3) and then run kernel_compile
+    1) copy the files to a directory of your choice,
+    2) run "move.sh",
+    3) and then run kernel_compile
 
 Afterwards, you need to edit /etc/grub.conf and append the following;
 
