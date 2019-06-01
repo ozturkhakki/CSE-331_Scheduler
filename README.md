@@ -1,5 +1,5 @@
 # CSE-331_Scheduler
-This is a project I have completed with a team of 3 for CSE-331 (Operating Systems and Designs) course in my university education.
+This is a project I have completed with a team of 3 for CSE-331 (Operating Systems Design) course in my university education.
 
 Our team have implemented a scheduler which used user priority for sharing CPU time among active processes.
 
